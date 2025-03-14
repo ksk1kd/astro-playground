@@ -8,7 +8,16 @@ const textColor = "navy";
 
 <Layout>
 	<h1>{pageTitle}</h1>
-	{isBodyVisible && <p>This is about page.</p>}
+	{isBodyVisible && 
+		<>
+			<p>
+				This is about page.
+			</p>
+			<p>
+				<a href="">Sample Link</a>
+			</p>
+		</>
+	}
 </Layout>
 
 <style define:vars={{ textColor }}>
