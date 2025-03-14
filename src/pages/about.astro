@@ -3,9 +3,16 @@ import Layout from '../layouts/Layout.astro';
 
 const pageTitle = "About";
 const isBodyVisible = true;
+const textColor = "navy";
 ---
 
 <Layout>
 	<h1>{pageTitle}</h1>
 	{isBodyVisible && <p>This is about page.</p>}
 </Layout>
+
+<style define:vars={{ textColor }}>
+	p {
+		color: var(--textColor);
+	}
+</style>
