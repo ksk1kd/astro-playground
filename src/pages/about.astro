@@ -2,9 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 
 const pageTitle = "About";
+const isBodyVisible = true;
 ---
 
 <Layout>
 	<h1>{pageTitle}</h1>
-	<p>This is about page.</p>
+	{isBodyVisible && <p>This is about page.</p>}
 </Layout>
