@@ -1,0 +1,12 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const allBlogs = Object.values(import.meta.glob('../blog/*.md', { eager: true }));
+const uniqueTags = [...new Set(allBlogs.map((blog: any) => blog.frontmatter.tags).flat())];
+---
+<Layout>
+  <h1>Tags</h1>
+	<ul>
+		{uniqueTags.map((tag: any) => <li><a href={`/tag/${tag}`}>{tag}</a></li>)}
+	</ul>
+</Layout>
