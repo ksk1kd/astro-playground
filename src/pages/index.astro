@@ -1,7 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const data = Astro.locals;
 ---
 
 <Layout>
 	<h1>Home</h1>
+	<p>Hello, {data.name}.</p>
 </Layout>
