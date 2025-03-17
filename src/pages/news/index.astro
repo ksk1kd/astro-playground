@@ -1,0 +1,13 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+import { getCollection } from 'astro:content';
+const allNews = await getCollection('news');
+---
+
+<Layout>
+	<h1>News</h1>
+	<ul>
+		{allNews.map((news: any) => <li><a href={`/news/${news.id}`}>{news.data.title}</a></li>)}
+	</ul>
+</Layout>
